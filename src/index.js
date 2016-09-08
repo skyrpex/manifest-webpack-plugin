@@ -33,6 +33,9 @@ export default class ManifestWebpackPlugin {
           .filter(file => !/\.map$/.test(file))
           .map(file => url.resolve(jsonStats.publicPath, file))
           .groupBy(file => path.extname(file).substr(1))
+          .merge({
+            publicPath: jsonStats.publicPath,
+          })
           .value();
 
       fs.writeFileSync(this.filename, JSON.stringify(files));
