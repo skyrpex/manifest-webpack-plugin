@@ -8,7 +8,7 @@
 
 ```js
 // webpack.config.js
-import ManifestPlugin from 'manifest-webpack-plugin';
+import ManifestPlugin from '@skyrpex/manifest-webpack-plugin';
 
 export default {
   // ...
