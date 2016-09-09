@@ -2,7 +2,7 @@
 
 ## Installation
 
-`npm install skyrpex/manifest-webpack-plugin`
+`npm install @skyrpex/manifest-webpack-plugin`
 
 ## Usage
 
