@@ -8,7 +8,6 @@ import {
   mapValues,
   flatMap,
   map,
-  tap,
   keyBy,
 } from 'lodash/fp';
 import chunkSorter from 'html-webpack-plugin/lib/chunksorter';
