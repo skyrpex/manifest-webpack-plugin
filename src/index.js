@@ -1,5 +1,6 @@
 import fs from 'fs';
 import url from 'url';
+import path from 'path';
 import {
   flow,
   filter,
@@ -36,7 +37,7 @@ const isSourcemap = file => /\.map$/.test(file);
 const getAssetType = file => file.match(/\.(\w+)$/)[1];
 
 export default class ManifestWebpackPlugin {
-  constructor(filename) {
+  constructor(filename = 'manifest.json') {
     this.filename = filename;
   }
 
@@ -81,7 +82,10 @@ export default class ManifestWebpackPlugin {
         )),
       )(jsonStats.chunks);
 
-      fs.writeFileSync(this.filename, JSON.stringify(files));
+      fs.writeFileSync(
+        path.join(compiler.options.output.path, this.filename),
+        JSON.stringify(files),
+      );
     });
   }
 }
