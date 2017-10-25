@@ -83,7 +83,7 @@ export default class ManifestWebpackPlugin {
       )(jsonStats.chunks);
 
       fs.writeFileSync(
-        path.join(compiler.options.output.path, this.filename),
+        path.resolve(compiler.options.output.path, this.filename),
         JSON.stringify(files),
       );
     });
